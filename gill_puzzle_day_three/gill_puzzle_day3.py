@@ -15,77 +15,47 @@ with open(data_file, 'r') as file_input:
     report_numbers = file_input.read().splitlines()
 
 # Print out how many bits there are in the input file
-total_commands = len(report_numbers)
-print(f'There are {total_commands} total binary numbers')
+total_number_lines = len(report_numbers)
+print(f'There are {total_number_lines} total binary numbers')
 
-# # Declare and assign positions to zero
-# horizontal_position = 0
-# depth = 0
+# Declare and assign gamma and epsilon rates
+gamma_rate = 0
+epsilon_rate = 0
 
-# # Condition that read the array (sumbarine_commands) and re-assign positions
-# for i in range(0, total_commands):
-#     # Forward command
-#     if (array_commands[i].startswith('f')):
-#         last_num = array_commands[i][-1]
-#         horizontal_position += int(last_num)
-#     # Up command
-#     if (array_commands[i].startswith('u')):
-#         last_num = array_commands[i][-1]
-#         depth -= int(last_num)
-#     # Down command
-#     if (array_commands[i].startswith('d')):
-#         last_num = array_commands[i][-1]
-#         depth += int(last_num)
+# Declare and assign gamma and epsilon bits
+total_ones = 0
+total_zeros = 0
 
-# # Print out the horizontal and depth positions since they were re-assigned in the prior if blocks
-# print(f"Your horizontal position is : {horizontal_position}  and depth is : {depth}") 
-# answer = horizontal_position * depth
-# print(f"Answer to the part 1 puzzle is : {answer}\n\n\n\n")
-# # Answer is horizontal = 1950 and depth = 823. The product of these two numbers = 1,604,850
-
-# # ******************************************************************************
-# print()
-# # Below is my Day 2 Puzzle Part 2
-# # Goal: What do you get if you multiply your final horizontal position by your final depth?
-
-# # Define if we are using the test file or non-test input file
-# test = False
-# if test:
-#     data_file = 'test_input.txt'
-# else:
-#     data_file = 'data/input_part2.txt'
-
-# # Assign the input data into the variable known as 'array_commands'
-# with open(data_file, 'r') as file_input:
-#     array_commands = file_input.read().splitlines()
-
-# # Print out how many commands there are in the input file
-# total_commands = len(array_commands)
-# print(f'There are {total_commands} total submarine command(s)')
-
-# # Declare and assign positions to zero
-# horizontal_position = 0
-# depth = 0
-# aim = 0
-
-# # Condition that read the array (sumbarine_commands) and re-assign positions
-# for i in range(0, total_commands):
-#     # Forward command
-#     if (array_commands[i].startswith('f')):
-#         last_num = array_commands[i][-1]
-#         horizontal_position += int(last_num)
-#         depth += (int(last_num) * aim)
-#     # Up command
-#     if (array_commands[i].startswith('u')):
-#         last_num = array_commands[i][-1]
-#         aim -= int(last_num)
-#     # Down command
-#     if (array_commands[i].startswith('d')):
-#         last_num = array_commands[i][-1]
-#         aim += int(last_num)
-
-# # Print out the horizontal and depth positions since they were re-assigned in the prior if blocks
-# print(f"Your horizontal position is : {horizontal_position}  ,  depth is : {depth}  ,  and aim is : {aim}") 
-# answer = horizontal_position * depth
-# print(f"Answer to the puzzle is : {answer}")
-# # Answer is horizontal = 1950, depth = 864198, and aim = 823. The answer = 1,685,186,100
+# Condition that read the array (total_number_lines) and re-assigns gamma/epsilon rates
+for i in range(0, total_number_lines):
+# Check first bit
+    first_bit = report_numbers[i][0]
+    if (first_bit == "1"):
+        total_ones += 1
+    else:
+        total_zeros += 1
+    print(f'Total number of ones is: {total_ones} and total number of zeros is: {total_zeros}')
+# Check second bit
+    second_bit = report_numbers[i][1]
+    if (second_bit == "1"):
+        total_ones += 1
+    else:
+        total_zeros += 1
+# Check first bit
+    third_bit = report_numbers[i][2]
+    if (third_bit == "1"):
+        total_ones += 1
+    else:
+        total_zeros += 1
+# Check fourth bit
+    fourth_bit = report_numbers[i][3]
+    if (fourth_bit == "1"):
+        total_ones += 1
+    else:
+        total_zeros += 1
+# Check fifth bit
+    fifth_bit = report_numbers[i][4]
+    if (fifth_bit == "1"):
+        total_ones += 1
+    else:
+        total_zeros += 1
